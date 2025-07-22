@@ -4,13 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>อยู่ระหว่างปรับปรุงเว็บไซต์</title>
-  <!-- โหลดฟอนต์ Kanit จาก Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+  <title>เว็บไซต์อยู่ระหว่างปรับปรุง - สนค.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #92205d; /* สีหลัก (ม่วงแดง) */
+      --secondary-color: #3f3e3e; /* สีข้อความเข้ม */
+      --text-light-color: #6e6e6e; /* สีข้อความรอง */
+      --background-color: #f7f7f7; /* สีพื้นหลังอ่อน */
+      --border-color: #e0e0e0; /* สีเส้นแบ่ง */
+    }
+
     body {
       margin: 0;
-      background-color: #ffffff;
+      background-color: var(--background-color);
       font-family: 'Kanit', sans-serif;
       display: flex;
       flex-direction: column;
@@ -18,34 +25,131 @@
       align-items: center;
       height: 100vh;
       text-align: center;
+      padding: 30px; /* เพิ่ม padding เพื่อป้องกันเนื้อหาติดขอบ */
+      box-sizing: border-box; /* รวม padding ในความสูง/กว้าง */
+    }
+
+    .container {
+      background-color: #ffffff;
+      border-radius: 15px; /* มุมโค้งมน */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* เงาที่ชัดเจนขึ้น */
+      padding: 50px 30px;
+      max-width: 620px; /* จำกัดความกว้างสูงสุด */
+      width: 95%; /* ทำให้ยืดหยุ่นตามหน้าจอ */
+      box-sizing: border-box;
     }
 
     img {
-      max-width: 300px;
+      max-width: 250px; /* ปรับขนาดโลโก้เล็กน้อย */
       height: auto;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+      animation: fadeIn 1s ease-out; /* เพิ่ม Animation */
     }
 
     h1 {
-      color: #3f3e3e;
+      color: var(--primary-color);
       font-weight: 700;
-      font-size: 2.2rem;
+      font-size: 2.2rem; /* ขนาดใหญ่ขึ้นเล็กน้อย */
+      margin-bottom: 15px;
+      line-height: 1.3;
     }
-    #sub_2{
-      color: #92205d;
+
+    h2 {
+      color: var(--secondary-color);
+      font-weight: 500; /* น้ำหนักฟอนต์ปานกลาง */
+      font-size: 1.5rem; /* ขนาดใหญ่ขึ้นเล็กน้อย */
+      margin-bottom: 10px;
     }
-    #sub_3{
-      color: #373637;
+
+    p {
+      color: var(--text-light-color);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border-color);
+      margin: 30px auto; /* เพิ่มระยะห่าง */
+      width: 70%; /* ความยาวของเส้น */
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease; /* เพิ่ม Transition */
+    }
+
+    a:hover {
+      color: #7a1b4e; /* สีเข้มขึ้นเมื่อ hover */
+      text-decoration: underline;
+    }
+
+    /* Animation สำหรับ Fade In */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Media Queries สำหรับ Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      img {
+        max-width: 200px;
+      }
+      .container {
+        padding: 40px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+      img {
+        max-width: 150px;
+      }
+      .container {
+        padding: 40px 20px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- โลโก้ TPSO (ชื่อไฟล์ต้องอยู่ในโฟลเดอร์เดียวกับไฟล์นี้) -->
-  <img src="./tpso_logo.png" alt="โลโก้ TPSO">
-  <h2>เว็บไซต์สำนักงานนโยบายและยุทธศาสตร์การค้า</h2>
-  <h1 id="sub_2">อยู่ระหว่างปรับปรุง ส่งผลให้ไม่สามารถให้บริการได้ในขณะนี้</h1>
-  <h2 id="sub_3">สนค. จึงขออภัยในความไม่สะดวกมา ณ โอกาสนี้</h2>
+  <div class="container">
+    <img src="./tpso_logo.png" alt="โลโก้ TPSO">
+    <h2>เว็บไซต์สำนักงานนโยบายและยุทธศาสตร์การค้า</h2>
+    <h1>เว็บไซต์อยู่ระหว่างปรับปรุง</h1>
+    <p>ไม่สามารถให้บริการได้ในขณะนี้ สนค. จึงขออภัยในความไม่สะดวกมา ณ โอกาสนี้</p>
+    <hr>
+    <p>
+      สำหรับข้อมูลดัชนีเศรษฐกิจการค้า สามารถเข้าดูได้ที่ <a href="https://index.tpso.go.th" target="_blank">index.tpso.go.th</a>
+    </p>
+  </div>
 </body>
 
 </html>
